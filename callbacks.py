@@ -12,6 +12,7 @@ def get_callbacks(app):
     )
     def update_avatar(clicks):
         return random_avatar()
+
     @app.callback(
         Output("mbti","figure"),
         Input("mbti-input","value")
@@ -25,7 +26,7 @@ def get_callbacks(app):
             ]
         pie_chart=go.Figure(
             go.Pie(
-                value=[1]*16,
+                values=[1]*16,
                 labels=MBTI, textinfo="label", 
                 hoverinfo= "label",
                 hole=0.6, 
@@ -58,6 +59,7 @@ def get_callbacks(app):
         if name is None:
             return "이름"
         return f"이름 {name}"
+
     @app.callback(
             Output("age","children"),
             Input("age-input","value")

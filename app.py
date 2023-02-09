@@ -6,7 +6,7 @@ from callbacks import get_callbacks
 from utils import MBTI
 
 app = Dash(__name__)
-
+server= app.server
 
 def user_controls(): #화면 왼쪽에 사용자에게 조작 입력받는 부분
     return html.Div(
@@ -73,4 +73,4 @@ for file in os.listdir("assets"):
 
 
 if __name__ == "__main__":
-    app.run_server()
+    app.run_server(debug=True)
